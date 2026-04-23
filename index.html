@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ping Pong Game</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <header>
+      <h1>Ping Pong</h1>
+      <p>Use W/S or Arrow Up/Down to move the left paddle. Miss the ball and the game ends.</p>
+    </header>
+
+    <section class="game-section">
+      <div class="game-wrapper">
+        <canvas id="gameCanvas" width="900" height="500"></canvas>
+        <div class="overlay" id="overlay">
+          <div class="overlay-card">
+            <p id="overlayText">Press Start to Play</p>
+            <button id="restartBtn">Restart</button>
+          </div>
+        </div>
+      </div>
+
+      <aside class="game-panel">
+        <div class="scoreboard">
+          <div class="score">Player: <span id="playerScore">0</span></div>
+          <div class="score">CPU: <span id="cpuScore">0</span></div>
+        </div>
+
+        <div class="controls">
+          <button id="startBtn">Start / Restart</button>
+          <label>
+            Mode:
+            <select id="difficulty">
+              <option value="easy">Easy</option>
+              <option value="medium" selected>Medium</option>
+              <option value="hard">Hard</option>
+            </select>
+          </label>
+        </div>
+      </aside>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

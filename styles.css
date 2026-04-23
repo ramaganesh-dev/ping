@@ -1,0 +1,178 @@
+:root {
+  --bg: #101620;
+  --surface: #182334;
+  --accent: #5bd1ff;
+  --accent-strong: #45b0ff;
+  --text: #ebf4ff;
+  --muted: #9bb6d9;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Inter", system-ui, sans-serif;
+  background: radial-gradient(circle at top, #1f334f 0%, #101620 60%);
+  color: var(--text);
+  display: grid;
+  place-items: center;
+  padding: 16px;
+}
+
+.container {
+  width: min(960px, 100%);
+  display: grid;
+  gap: 20px;
+}
+
+header {
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(2rem, 4vw, 3rem);
+}
+
+p {
+  margin: 8px auto 0;
+  color: var(--muted);
+  max-width: 40rem;
+}
+
+.game-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) 260px;
+  gap: 18px;
+  align-items: start;
+}
+
+.game-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+.game-panel {
+  display: grid;
+  gap: 18px;
+}
+
+.scoreboard {
+  display: grid;
+  gap: 12px;
+}
+
+.controls {
+  display: grid;
+  gap: 12px;
+}
+
+canvas {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  max-height: 70vh;
+  border-radius: 24px;
+  background: linear-gradient(180deg, rgba(24,35,52,0.95), rgba(16,22,32,0.95));
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+  display: block;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background: rgba(4, 9, 18, 0.75);
+  border-radius: 24px;
+  opacity: 1;
+  transition: opacity 200ms ease;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.overlay-card {
+  text-align: center;
+  background: rgba(14, 23, 38, 0.95);
+  padding: 24px 28px;
+  border-radius: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.overlay-card p {
+  margin: 0 0 16px;
+  font-size: 1.2rem;
+  color: var(--text);
+}
+
+.scoreboard {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.score {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px;
+  text-align: center;
+  font-size: 1.1rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  align-items: center;
+}
+
+button,
+select {
+  border: none;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+button {
+  background: var(--accent);
+  color: #081016;
+  font-weight: 700;
+}
+
+select {
+  background: rgba(255,255,255,0.08);
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .game-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  canvas {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+@media (max-width: 560px) {
+  .controls,
+  .scoreboard {
+    grid-template-columns: 1fr;
+  }
+}
