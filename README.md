@@ -44,4 +44,4 @@ This is my first project on GitHub, inspired by my experience at a hackathon. I'
 ---
 
 ## 🌐 Live Demo
-https://ramaganesh-dev.github.io/ping/
+ https://ramaganesh-dev.github.io/HIGH-PING/
